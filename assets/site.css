@@ -158,7 +158,7 @@ h1{font-size:clamp(2.8rem,7.5vw,6.8rem);font-weight:600;letter-spacing:-0.035em;
 .quote blockquote.fade{opacity:0}
 .quote cite{display:block;margin-top:34px;font-style:normal;font-size:11px;letter-spacing:.08em;font-weight:500;text-transform:uppercase;color:var(--mut);text-align:center;transition:opacity .5s var(--ease)}
 .quote cite.fade{opacity:0}
-.quote cite::before{content:'';display:inline-block;width:34px;height:1px;background:var(--acc);vertical-align:middle;margin-right:16px}
+.quote cite .review-stars{display:block;margin-bottom:10px}
 .quote-link{display:flex;justify-content:center;margin-top:40px}
 
 /* ============ COLLECTION ROWS ============ */
@@ -411,10 +411,20 @@ main > .pd:first-child{padding-top:calc(var(--navh) + clamp(18px,3vw,36px))}
 /* ============ REVIEWS (about) ============ */
 .rv-wrap{padding-block:clamp(80px,11vh,130px)}
 .rv-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(34px,5vw,90px);border-top:1px solid var(--linel);margin-top:clamp(44px,6vh,72px)}
-.rv{padding:34px 0;border-bottom:1px solid var(--linel)}
+.rv{display:block;min-width:0;padding:34px 0;border-bottom:1px solid var(--linel);color:inherit;transition:color .3s var(--ease)}
+.rv-head{display:flex;align-items:center;gap:13px;margin-bottom:20px;min-width:0}
+.rv-avatar{position:relative;flex:0 0 44px;width:44px;height:44px;display:grid;place-items:center;overflow:hidden;border-radius:50%;background:var(--ink);color:var(--paper);font-size:11px;font-weight:600;letter-spacing:.05em}
+.rv-avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.rv-person{display:block;min-width:0}
+.rv-person strong{display:block;overflow:hidden;text-overflow:ellipsis;font-size:13px;font-weight:600;white-space:nowrap}
+.rv-person small{display:block;margin-top:4px;color:var(--mut);font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.rv-open{margin-left:auto;color:var(--mut);font-size:16px;transition:color .3s,transform .3s var(--ease)}
+.review-stars{color:var(--acc);font-size:13px;line-height:1;letter-spacing:.12em}
 .rv blockquote{font-family:inherit;font-style:normal;font-weight:450;font-size:clamp(1.15rem,1.9vw,1.5rem);line-height:1.5;letter-spacing:-0.015em}
-.rv cite{display:block;margin-top:18px;font-style:normal;font-size:11px;letter-spacing:.08em;font-weight:500;text-transform:uppercase;color:var(--mut)}
-.rv cite::before{content:'';display:inline-block;width:26px;height:1px;background:var(--acc);vertical-align:middle;margin-right:12px}
+.rv .review-stars{margin-bottom:14px}
+.rv:hover{color:var(--acc)}
+.rv:hover .rv-open{color:var(--acc);transform:translate(2px,-2px)}
+.rv blockquote,.rv-person strong{overflow-wrap:anywhere}
 
 /* ============ VISIT / MAP (dark) ============ */
 .visit{padding-block:clamp(80px,11vh,130px)}

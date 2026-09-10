@@ -135,22 +135,25 @@ if(steps.length){
 
 /* ---------- REVIEW ROTATOR (home quote) ---------- */
 const REVIEWS=[
-  {q:'They are just best in the business. Try once & thank me later.',n:'Ghoshit B.'},
-  {q:'Good quality mat available across all variety. Good feel and soft texture mat at affordable price.',n:'Sachin K.'},
-  {q:'Superb quality and lots of variety, highly recommended.',n:'Poonam G.'},
-  {q:'Good material and fitting.',n:'Rohit A.'},
-  {q:'Quality products with reasonable price.',n:'Praveen P.'},
-  {q:'Good quality super.',n:'Mahesh J.'}
+  {q:'I’ve bought a lot of accessories over the years, but these mats stand out. The fit is exact, the quality feels built to last, and the whole experience felt honest. Feels good when someone delivers more than expected.',n:'Ishit Rider',d:'a year ago',u:'https://maps.app.goo.gl/Ga2sVnMpEV1Dnd2s8'},
+  {q:'Mat quality is good and customer nature and service is very good pls guys please visit at once',n:'Vivek Pandey',d:'a year ago',u:'https://maps.app.goo.gl/WpfPkR86M9BjGGUG8'},
+  {q:'Good quality mat available across all variety.\nGood feel and soft texture mat at affordable price',n:'sachin khanna',d:'a year ago',u:'https://maps.app.goo.gl/X7suk3PdBEKTpwTE6'},
+  {q:'They are just Best in the business. Try once & thank me later. 🫶',n:'Ghoshit Bhagat',d:'10 months ago',u:'https://maps.app.goo.gl/MW9mRo13mmq9kUQY7'},
+  {q:'Best product,quality is really good, timely delivered..',n:'Aditya Chaturvedi',d:'a year ago',u:'https://maps.app.goo.gl/P7iw4Mw5zhcT8duDA'},
+  {q:'Superb quality and lots of variety, highly recommended 😇',n:'Poonam Gaur',d:'a year ago',u:'https://maps.app.goo.gl/R7Mq9VQVth1LCzMs6'},
+  {q:'Good quality 7D mats you can trust and well designed.',n:'Hari Priyan',d:'a year ago',u:'https://maps.app.goo.gl/jG8Gc17q79CaWagj8'},
+  {q:'Product quality is good and proper feeting',n:'Chanchal Rathore',d:'3 months ago',u:'https://maps.app.goo.gl/tgBUFmGtudb8Fsoj7'}
 ];
-const rvQ=$('#rvQuote'),rvC=$('#rvCite');
-if(rvQ&&rvC){
+const rvQ=$('#rvQuote'),rvC=$('#rvCite'),rvB=$('#rvByline'),rvL=$('#rvLink');
+if(rvQ&&rvC&&rvB&&rvL){
   let rvi=0,rvPaused=false,rvTimer=null;
   function showReview(i){
     rvi=i%REVIEWS.length;
     rvQ.classList.add('fade');rvC.classList.add('fade');
     setTimeout(()=>{
       rvQ.textContent='\u201C'+REVIEWS[rvi].q+'\u201D';
-      rvC.firstChild.textContent=REVIEWS[rvi].n+' \u2014 Google review';
+      rvB.textContent=REVIEWS[rvi].n+' \u2014 Google review · '+REVIEWS[rvi].d;
+      rvL.href=REVIEWS[rvi].u;
       rvQ.classList.remove('fade');rvC.classList.remove('fade');
     },RM?0:500);
   }
