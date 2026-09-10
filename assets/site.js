@@ -76,6 +76,7 @@ if(burger&&menu){
     document.body.classList.toggle('lock',o);
   });
   $$('.m-link').forEach(a=>a.addEventListener('click',closeMenu));
+  addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
 }
 
 /* ---------- CURSOR ---------- */
